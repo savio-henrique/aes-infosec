@@ -1,3 +1,4 @@
 /nix
 /kat_aes
 /venv
+*/*pycache*

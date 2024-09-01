@@ -26,3 +26,12 @@ def cfb():
 def gcm():
     pass
 
+# Dicionário de referência para os modos
+MOP = {"ECB": ecb,
+       "CTR": ctr,
+       "CBC": cbc,
+       "OFB": ofb,
+       "CFB": cfb,
+       "GCM": gcm
+       }
+

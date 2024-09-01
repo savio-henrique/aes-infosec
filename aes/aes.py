@@ -7,19 +7,12 @@
 from utils import *
 from modes import *
 
-# Definição dos modos de operação
-MOP = {"ECB": ecb(),
-       "CTR": ctr(),
-       "CBC": cbc(),
-       "OFB": ofb(),
-       "CFB": cfb(),
-       "GCM": gcm()
-       }
-
 # Função principal
 def main():
-    key = input("Digite a chave de criptografia: ")
-    bytes_to_matrix(key)
+    rounds = input("Digite a quantidade de rodadas desejada: ")
+    key = input("Digite uma chave válida para a quantidade de rodadas: ")
+
+    keys = keyExpansion(key,int(rounds))
     """
     mode = make_menu(MOP, "Digite o modo de operação desejado: \nModos de operação:")
     print(f"Modo de operação escolhido: {MOP[mode]}")
