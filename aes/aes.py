@@ -18,8 +18,10 @@ def imageMode(key, mode, rounds, mop):
         blocks = toBlocks(img_bytes, 16)
         cipher = mop(key, mode, rounds, blocks)
 
-        bytesToImage(cipher, f"./images/{filename}")
-        print(f"Arquivo cifrado salvo em ./files/{filename}")
+        with open(f"./images/{filename}", 'w') as f:
+            f.write(cipher.hex())
+            print(f"Arquivo cifrado salvo em ./files/{filename}")
+            f.close()bytesToImage(cipher, f"./images/{filename}")
 
     elif mode == 1:
         file = input("Digite o nome da imagem com extensão a ser decifrada (deve estar na pasta ./images): ")
